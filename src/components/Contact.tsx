@@ -62,7 +62,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow slide-up">
+          <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow slide-in-left hover-lift">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6 gradient-text">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -126,8 +126,8 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6 slide-up delay-300">
-            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
+          <div className="space-y-6 slide-in-right stagger-2">
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 gradient-text">Contact Information</h3>
                 <div className="space-y-6">
@@ -136,7 +136,7 @@ const Contact = () => {
                       key={info.label}
                       className="flex items-center gap-4 p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-all duration-300"
                     >
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center float">
                         <info.icon className="w-6 h-6 text-primary-foreground" />
                       </div>
                       <div>
@@ -158,7 +158,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 gradient-text">Follow Me</h3>
                 <div className="space-y-4">
@@ -170,7 +170,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 wiggle">
                         <social.icon className="w-6 h-6 text-primary-foreground" />
                       </div>
                       <div>
@@ -184,23 +184,23 @@ const Contact = () => {
             </Card>
 
             {/* Quick Stats */}
-            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 gradient-text">Quick Stats</h3>
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="p-4 rounded-lg bg-primary/5 float-slow stagger-1">
                     <p className="text-2xl font-bold text-primary">9.42</p>
                     <p className="text-sm text-muted-foreground">CGPA</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="p-4 rounded-lg bg-primary/5 float-slow stagger-2">
                     <p className="text-2xl font-bold text-primary">220+</p>
                     <p className="text-sm text-muted-foreground">LeetCode</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="p-4 rounded-lg bg-primary/5 float-slow stagger-3">
                     <p className="text-2xl font-bold text-primary">Top 16%</p>
                     <p className="text-sm text-muted-foreground">Hackathon</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-primary/5">
+                  <div className="p-4 rounded-lg bg-primary/5 float-slow stagger-4">
                     <p className="text-2xl font-bold text-primary">2+</p>
                     <p className="text-sm text-muted-foreground">Projects</p>
                   </div>
