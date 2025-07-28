@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Award, Code, TrendingUp, Users } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const Hero = () => {
@@ -100,6 +101,30 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Animated Feature Cards */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {[
+            { icon: Award, label: "9.42 CGPA", sublabel: "Academic Excellence", delay: "0ms" },
+            { icon: Code, label: "220+", sublabel: "LeetCode Problems", delay: "200ms" },
+            { icon: TrendingUp, label: "Top 16%", sublabel: "Hackathon Rank", delay: "400ms" },
+            { icon: Users, label: "5+", sublabel: "AI Projects", delay: "600ms" }
+          ].map((item, index) => (
+            <Card 
+              key={index}
+              className="group hover:scale-105 transition-all duration-500 border-primary/20 hover:border-primary/40 hover:shadow-glow bg-card/50 backdrop-blur-sm"
+              style={{ animationDelay: item.delay }}
+            >
+              <CardContent className="p-4 text-center">
+                <div className="w-10 h-10 bg-gradient-primary rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <div className="text-lg font-bold gradient-text">{item.label}</div>
+                <div className="text-xs text-muted-foreground">{item.sublabel}</div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Scroll indicator */}
