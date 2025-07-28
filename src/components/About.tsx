@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-secondary">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 fade-in">{/* Section header */}
+        <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             About <span className="gradient-text">Me</span>
           </h2>
@@ -26,8 +26,8 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* About Text */}
-          <div className="space-y-6 slide-in-left">{/* About Text */}
-            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift">{/* Journey card */}
+          <div className="space-y-6 slide-up">
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4 gradient-text">My Journey</h3>
                 <div className="space-y-4 text-muted-foreground">
@@ -45,7 +45,7 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift">{/* Education card */}
+            <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4 gradient-text">Education</h3>
                 <div className="space-y-3">
@@ -64,17 +64,18 @@ const About = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="space-y-6 slide-in-right stagger-2">{/* Skills Grid */}
+          <div className="space-y-6 slide-up delay-300">
             <h3 className="text-2xl font-bold mb-6 gradient-text">Technical Skills</h3>
             <div className="grid gap-6">
               {skills.map((skillGroup, index) => (
                 <Card 
                   key={skillGroup.category}
-                  className={`border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow hover-lift scale-in stagger-${index + 1}`}
+                  className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">{/* Skills header */}
-                      <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center float">{/* Skills icon */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                         <skillGroup.icon className="w-5 h-5 text-primary-foreground" />
                       </div>
                       <h4 className="font-semibold text-lg">{skillGroup.category}</h4>
@@ -84,7 +85,7 @@ const About = () => {
                         <Badge 
                           key={skill} 
                           variant="secondary"
-                          className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift"
+                          className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                         >
                           {skill}
                         </Badge>
