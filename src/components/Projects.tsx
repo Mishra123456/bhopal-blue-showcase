@@ -60,7 +60,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="group border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-glow overflow-hidden slide-up"
+              className="group border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-glow overflow-hidden slide-up hover-lift"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Project Image */}
@@ -68,18 +68,17 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 hover-glow"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 <div className="absolute top-4 right-4">
                   <Badge 
                     variant={project.status === "Completed" ? "default" : "secondary"}
-                    className={project.status === "Completed" 
+                    className={`${project.status === "Completed" 
                       ? "bg-green-600 hover:bg-green-700" 
-                      : "bg-yellow-600 hover:bg-yellow-700 animate-pulse"
-                    }
+                      : "bg-yellow-600 hover:bg-yellow-700 pulse-glow"} transition-all duration-300`}
                   >
-                    {project.status === "Ongoing" && <Zap className="w-3 h-3 mr-1" />}
+                    {project.status === "Ongoing" && <Zap className="w-3 h-3 mr-1 sparkle" />}
                     {project.status}
                   </Badge>
                 </div>
@@ -108,7 +107,7 @@ const Projects = () => {
                   <ul className="grid grid-cols-1 gap-2">
                     {project.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full float"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -123,7 +122,7 @@ const Projects = () => {
                       <Badge 
                         key={tech} 
                         variant="outline"
-                        className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                        className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift wiggle"
                       >
                         {tech}
                       </Badge>
@@ -135,7 +134,7 @@ const Projects = () => {
                 <div className="flex gap-3 pt-4">
                   <Button 
                     asChild
-                    className="gradient-bg hover:shadow-glow transition-all duration-300 flex-1"
+                    className="gradient-bg hover:shadow-glow transition-all duration-300 flex-1 hover-lift pulse-glow"
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
@@ -145,7 +144,7 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     asChild
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift"
                   >
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
