@@ -61,7 +61,7 @@ const Hero = () => {
                 href="https://linkedin.com/in/mukulmistracs" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1 transform"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -69,7 +69,7 @@ const Hero = () => {
                 href="https://github.com/Mishra123456" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1 transform"
               >
                 <Github className="w-6 h-6" />
               </a>
