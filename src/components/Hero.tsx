@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Trophy, Brain, Code, Star } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const Hero = () => {
@@ -100,6 +100,38 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Flip Cards */}
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {[
+            { icon: Trophy, front: "9.42", back: "CGPA", color: "from-amber-500 to-orange-600" },
+            { icon: Brain, front: "AI/ML", back: "Expert", color: "from-blue-500 to-purple-600" },
+            { icon: Code, front: "10+", back: "Projects", color: "from-green-500 to-teal-600" },
+            { icon: Star, front: "3+", back: "Years", color: "from-pink-500 to-rose-600" }
+          ].map((card, index) => (
+            <div 
+              key={index}
+              className="relative h-24 group [perspective:1000px] fade-in"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front Face */}
+                <div className={`absolute inset-0 w-full h-full rounded-xl bg-gradient-to-br ${card.color} shadow-lg flex flex-col items-center justify-center [backface-visibility:hidden] border border-white/10`}>
+                  <card.icon className="w-6 h-6 text-white mb-1" />
+                  <span className="text-white font-bold text-lg">{card.front}</span>
+                </div>
+                
+                {/* Back Face */}
+                <div className={`absolute inset-0 w-full h-full rounded-xl bg-gradient-to-br ${card.color} shadow-lg flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] border border-white/10`}>
+                  <span className="text-white font-semibold text-sm text-center px-2">{card.back}</span>
+                </div>
+              </div>
+              
+              {/* Hover glow effect */}
+              <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-30 transition-opacity duration-300 blur-xl -z-10`}></div>
+            </div>
+          ))}
         </div>
 
         {/* Scroll indicator */}
