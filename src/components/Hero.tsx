@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowDown, Github, Linkedin, Mail, MapPin, Award, Code, TrendingUp, Users } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const Hero = () => {
@@ -101,50 +100,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Animated Feature Cards */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {[
-            { icon: Award, label: "9.42 CGPA", sublabel: "Academic Excellence", delay: "0ms", gradient: "from-violet-500/20 to-purple-600/20" },
-            { icon: Code, label: "220+", sublabel: "LeetCode Problems", delay: "200ms", gradient: "from-blue-500/20 to-cyan-600/20" },
-            { icon: TrendingUp, label: "Top 16%", sublabel: "Hackathon Rank", delay: "400ms", gradient: "from-emerald-500/20 to-green-600/20" },
-            { icon: Users, label: "5+", sublabel: "AI Projects", delay: "600ms", gradient: "from-orange-500/20 to-red-600/20" }
-          ].map((item, index) => (
-            <Card 
-              key={index}
-              className={`group relative overflow-hidden hover:scale-110 hover:-translate-y-2 transition-all duration-700 ease-out border-primary/20 hover:border-primary/60 hover:shadow-glow bg-gradient-to-br ${item.gradient} backdrop-blur-sm animate-fade-in float`}
-              style={{ 
-                animationDelay: item.delay,
-                animationDuration: `${3000 + index * 500}ms`,
-                transform: `rotate(${Math.sin(index) * 2}deg)`
-              }}
-            >
-              {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Floating particles effect */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary/30 rounded-full animate-ping"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-accent/40 rounded-full animate-pulse delay-300"></div>
-              </div>
-
-              <CardContent className="relative p-5 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/60 rounded-xl mx-auto mb-3 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg">
-                  <item.icon className="w-6 h-6 text-primary-foreground drop-shadow-sm" />
-                </div>
-                <div className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-                  {item.label}
-                </div>
-                <div className="text-xs text-muted-foreground/80 group-hover:text-muted-foreground transition-colors duration-300">
-                  {item.sublabel}
-                </div>
-              </CardContent>
-
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-            </Card>
-          ))}
         </div>
 
         {/* Scroll indicator */}
