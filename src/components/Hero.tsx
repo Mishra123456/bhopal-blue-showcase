@@ -22,8 +22,8 @@ const Hero = () => {
           <div className="space-y-8 fade-in">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-primary font-medium">
-                <MapPin className="w-4 h-4" />
-                <span>Bhopal, India</span>
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span className="truncate">Bhopal, India</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 Hi, I'm{" "}
@@ -106,9 +106,9 @@ const Hero = () => {
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
             { icon: Trophy, front: "9.42", back: "CGPA", color: "from-amber-500 to-orange-600" },
-            { icon: Brain, front: "AI/ML", back: "Expert", color: "from-blue-500 to-purple-600" },
-            { icon: Code, front: "10+", back: "Projects", color: "from-green-500 to-teal-600" },
-            { icon: Star, front: "3+", back: "Years", color: "from-pink-500 to-rose-600" }
+            { icon: Brain, front: "AI/ML", back: "B.Tech", color: "from-blue-500 to-purple-600" },
+            { icon: Code, front: "5+", back: "Projects", color: "from-green-500 to-teal-600" },
+            { icon: Star, front: "2024", back: "Graduate", color: "from-pink-500 to-rose-600" }
           ].map((card, index) => (
             <div 
               key={index}
